@@ -1,0 +1,553 @@
+
+/* ==============================
+   GENERAL STYLES
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5fff8;
+    color: #173b28;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #d8eadf;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #0a8f4d;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #173b28;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0a9b50;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #0a9b50;
+    left: 0;
+    bottom: -8px;
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   HOME PAGE
+============================== */
+
+.home-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    min-height: calc(100vh - 135px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.home-content {
+    max-width: 650px;
+}
+
+.welcome {
+    color: #0a9b50;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.home-content h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.home-content h1 span {
+    color: #0a9b50;
+}
+
+.home-content h2 {
+    color: #367955;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.home-content h4 {
+    color: #547063;
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #0a9b50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #06743b;
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   PROGRESS CARD
+============================== */
+
+.progress-card {
+    background: white;
+    width: 350px;
+    min-height: 350px;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 15px 40px rgba(0, 100, 50, 0.12);
+    border: 1px solid #d9eee2;
+
+    text-align: center;
+}
+
+.circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            white 58%,
+            transparent 59%
+        ),
+        conic-gradient(
+            #0a9b50 85%,
+            #d8eee0 0
+        );
+
+    margin-bottom: 25px;
+}
+
+.circle span {
+    font-size: 30px;
+    font-weight: 900;
+    color: #0a9b50;
+    letter-spacing: 5px;
+}
+
+.progress-card h3 {
+    color: #173b28;
+    margin-bottom: 8px;
+}
+
+.progress-card p {
+    color: #6a8175;
+}
+
+
+/* ==============================
+   GENERAL PAGE SECTION
+============================== */
+
+.page-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 0;
+    flex: 1;
+}
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-heading p {
+    color: #0a9b50;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.page-heading h1 {
+    font-size: 48px;
+    color: #173b28;
+}
+
+
+/* ==============================
+   ABOUT PAGE
+============================== */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.about-text,
+.skills {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #d9eee2;
+    box-shadow: 0 10px 30px rgba(0, 100, 50, 0.06);
+}
+
+.about-text h2 {
+    color: #0a9b50;
+    margin-bottom: 20px;
+}
+
+.about-text h4 {
+    color: #536e61;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #698075;
+    line-height: 1.7;
+}
+
+.skills h3 {
+    font-size: 28px;
+    color: #173b28;
+    margin-bottom: 25px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-list span {
+    background: #e9f8ef;
+    color: #087d40;
+    border: 1px solid #c9ead7;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   SERVICES
+============================== */
+
+.service-intro {
+    max-width: 750px;
+    margin: -20px auto 45px;
+    text-align: center;
+    color: #61786c;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    border: 1px solid #d9eee2;
+    box-shadow: 0 8px 25px rgba(0, 100, 50, 0.06);
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #0a9b50;
+    box-shadow: 0 15px 35px rgba(0, 100, 50, 0.12);
+}
+
+.service-icon {
+    color: #0a9b50;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.service-card h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #173b28;
+}
+
+.service-card p {
+    color: #698075;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* ==============================
+   CONTACT PAGE
+============================== */
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-intro {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    color: #61786c;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+.contact-buttons {
+    max-width: 600px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-btn {
+    min-height: 85px;
+    background: white;
+    border: 1px solid #d9eee2;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+
+    text-align: left;
+    color: #173b28;
+
+    box-shadow: 0 8px 25px rgba(0, 100, 50, 0.06);
+    transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-5px);
+}
+
+.contact-btn > span {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e8f8ef;
+    color: #0a9b50;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contact-btn div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-btn strong {
+    font-size: 16px;
+}
+
+.contact-btn small {
+    color: #6b8176;
+    font-size: 12px;
+}
+
+.whatsapp:hover {
+    border-color: #25D366;
+}
+
+.email:hover {
+    border-color: #4285F4;
+}
+
+.phone:hover {
+    border-color: #0a9b50;
+}
+
+.linkedin:hover {
+    border-color: #0077B5;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: #083b23;
+    color: #cce8d8;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 950px) {
+
+    .home-section {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .progress-card {
+        width: 300px;
+        min-height: 300px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 18px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .home-section {
+        min-height: auto;
+        padding: 60px 0;
+    }
+
+    .home-content h1 {
+        font-size: 43px;
+    }
+
+    .home-content h2 {
+        font-size: 22px;
+    }
+
+    .page-section {
+        padding: 50px 0;
+    }
+
+    .page-heading h1 {
+        font-size: 38px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+```
