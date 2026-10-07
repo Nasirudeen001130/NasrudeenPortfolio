@@ -904,6 +904,840 @@ header {
 }
 
 
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+
+/* =========================================
+   PROJECT / ABOUT SECTION
+========================================= */
+
+.projects-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 100px 6%;
+
+  background: #f6fff8;
+
+  overflow: hidden;
+}
+
+
+/* Decorative background circles */
+
+.projects-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  top: -180px;
+  left: -180px;
+
+  background: rgba(22, 163, 74, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.projects-section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: -150px;
+  bottom: -150px;
+
+  background: rgba(22, 163, 74, 0.07);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 750px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+}
+
+.section-heading span {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #16a34a;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin-bottom: 18px;
+
+  color: #111111;
+
+  font-size: clamp(34px, 5vw, 58px);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+}
+
+.section-heading p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #666666;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1250px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.project-card {
+  position: relative;
+
+  width: 100%;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4eee7;
+
+  border-radius: 20px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+
+  border-color: #16a34a;
+
+  box-shadow: 0 25px 50px rgba(22, 163, 74, 0.15);
+}
+
+
+/* Top green animation */
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 4px;
+
+  background: #16a34a;
+
+  transition: width 0.4s ease;
+}
+
+.project-card:hover::before {
+  width: 100%;
+}
+
+
+/* =========================================
+   PROJECT NUMBER
+========================================= */
+
+.project-number {
+  position: absolute;
+
+  top: 25px;
+  right: 28px;
+
+  color: #16a34a;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================
+   PROJECT ICON
+========================================= */
+
+.project-icon {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf8ee;
+
+  border-radius: 15px;
+
+  font-size: 26px;
+}
+
+
+/* =========================================
+   PROJECT CATEGORY
+========================================= */
+
+.project-category {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #16a34a;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   PROJECT TITLE
+========================================= */
+
+.project-card h3 {
+  margin-bottom: 15px;
+
+  color: #111111;
+
+  font-size: 23px;
+
+  line-height: 1.3;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   PROJECT DESCRIPTION
+========================================= */
+
+.project-card > p {
+  margin-bottom: 22px;
+
+  color: #666666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.tech-stack,
+.design-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 25px;
+}
+
+.tech-stack span,
+.design-list span {
+  padding: 7px 11px;
+
+  background: #f1f7f3;
+
+  border-radius: 6px;
+
+  color: #333333;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   DESIGN TAGS
+========================================= */
+
+.design-list span {
+  background: #111111;
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   PROJECT BUTTON
+========================================= */
+
+.project-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 13px 20px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #16a34a;
+
+  transform: translateY(-2px);
+}
+
+.project-btn span {
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.project-btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================
+   FEATURED CARD
+========================================= */
+
+.project-card.featured {
+  border: 1px solid rgba(22, 163, 74, 0.35);
+}
+
+
+/* Featured ribbon */
+
+.project-card.featured::after {
+  content: "FEATURED";
+
+  position: absolute;
+
+  top: 20px;
+  left: -38px;
+
+  padding: 6px 45px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  transform: rotate(-45deg);
+}
+
+
+/* =========================================
+   CERTIFICATE
+========================================= */
+
+.certificate {
+  position: relative;
+
+  margin-top: 25px;
+
+  padding: 25px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #f8fff9,
+    #ffffff
+  );
+
+  border: 2px solid #16a34a;
+
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.certificate::before {
+  content: "✦";
+
+  position: absolute;
+
+  top: 8px;
+  left: 12px;
+
+  color: #16a34a;
+}
+
+.certificate::after {
+  content: "✦";
+
+  position: absolute;
+
+  right: 12px;
+  bottom: 8px;
+
+  color: #16a34a;
+}
+
+.certificate-top {
+  margin-bottom: 12px;
+
+  color: #16a34a;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.certificate h4 {
+  margin-bottom: 12px;
+
+  color: #111111;
+
+  font-size: 18px;
+}
+
+.certificate p {
+  margin: 7px 0;
+
+  color: #555555;
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.certificate strong {
+  color: #111111;
+}
+
+.certificate-date {
+  margin-top: 15px;
+
+  color: #16a34a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   PROJECT STATUS
+========================================= */
+
+.project-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #555555;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.project-status span {
+  width: 8px;
+  height: 8px;
+
+  background: #16a34a;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+   1200px and below
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .projects-section {
+    padding: 90px 5%;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+   900px and below
+========================================= */
+
+@media (max-width: 900px) {
+
+  .projects-section {
+    padding: 80px 5%;
+  }
+
+  .section-heading {
+    margin-bottom: 50px;
+  }
+
+  .section-heading h2 {
+    font-size: 42px;
+  }
+
+  .section-heading p {
+    font-size: 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .project-card {
+    padding: 27px;
+  }
+
+  .project-card h3 {
+    font-size: 21px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+   700px and below
+========================================= */
+
+@media (max-width: 700px) {
+
+  .projects-section {
+    padding: 70px 25px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .section-heading span {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .section-heading h2 {
+    font-size: 36px;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .project-card {
+    padding: 28px;
+  }
+
+  .project-card h3 {
+    font-size: 23px;
+  }
+
+  .project-card > p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   500px and below
+========================================= */
+
+@media (max-width: 500px) {
+
+  .projects-section {
+    padding: 60px 18px;
+  }
+
+  .projects-section::before {
+    width: 250px;
+    height: 250px;
+
+    top: -120px;
+    left: -120px;
+  }
+
+  .projects-section::after {
+    width: 220px;
+    height: 220px;
+
+    right: -120px;
+    bottom: -100px;
+  }
+
+  .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-heading span {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+  .section-heading h2 {
+    font-size: 32px;
+
+    line-height: 1.15;
+  }
+
+  .section-heading p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .projects-grid {
+    gap: 18px;
+  }
+
+  .project-card {
+    padding: 24px;
+
+    border-radius: 16px;
+  }
+
+  .project-number {
+    top: 20px;
+    right: 22px;
+  }
+
+  .project-icon {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 18px;
+
+    font-size: 23px;
+  }
+
+  .project-category {
+    font-size: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 21px;
+  }
+
+  .project-card > p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .tech-stack span,
+  .design-list span {
+    padding: 6px 9px;
+
+    font-size: 10px;
+  }
+
+  .project-btn {
+    width: 100%;
+
+    padding: 13px 15px;
+  }
+
+  .certificate {
+    padding: 22px 15px;
+  }
+
+  .certificate h4 {
+    font-size: 16px;
+  }
+
+  .certificate p {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+   380px and below
+========================================= */
+
+@media (max-width: 380px) {
+
+  .projects-section {
+    padding: 50px 14px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .section-heading p {
+    font-size: 12px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 19px;
+  }
+
+  .project-card > p {
+    font-size: 12px;
+  }
+
+  .project-btn {
+    font-size: 12px;
+  }
+
+}
+
+.toolkit-text.highlight{
+  color:#087d40
+  font-weight:500;
+}
+.toolkit-text{
+  padding: 32px o;
+  font-size: 22px;
+  line-height: 1.9;
+  color:#0a9b50
+  font-weight: 500;
+}
+
+
+
 /* ================================
    RESPONSIVE DESIGN
 ================================ */
